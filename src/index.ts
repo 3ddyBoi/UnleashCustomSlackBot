@@ -29,6 +29,10 @@ fastify.post('/unleash-webhook', async (request, reply) => {
   }
 });
 
+fastify.get('/health', async (_request, reply) => {
+  reply.send({ status: 'ok' });
+});
+
 (async () => {
   try {
     await fastify.listen({ port: 3000 });
