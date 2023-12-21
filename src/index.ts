@@ -35,7 +35,7 @@ fastify.get('/health', async (_request, reply) => {
 
 (async () => {
   try {
-    await fastify.listen({ port: 3000 });
+    await fastify.listen({ host: '0.0.0.0', port: 3000 });
     console.log(`server listening on ${3000}`);
   } catch (err) {
     fastify.log.error(err);
